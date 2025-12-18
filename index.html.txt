@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Who Killed the World</title>
+  <meta name="description" content="Small-batch apparel. Made by hand. No fluff." />
+
+  <style>
+    :root { --bg:#0b0b0b; --fg:#f2f2f2; --muted:#b9b9b9; --line:#2a2a2a; }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      line-height: 1.5;
+    }
+    a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--line); }
+    a:hover { border-bottom-color: var(--fg); }
+    .wrap { max-width: 880px; margin: 0 auto; padding: 28px 18px 80px; }
+    header { display:flex; gap:16px; align-items:baseline; justify-content:space-between; padding: 10px 0 24px; border-bottom:1px solid var(--line); }
+    .brand { font-weight: 700; letter-spacing: .06em; text-transform: uppercase; }
+    .right { display:flex; gap:14px; align-items:baseline; }
+    .tag { color: var(--muted); font-size: 14px; }
+    h1 { font-size: clamp(28px, 4vw, 44px); margin: 28px 0 10px; }
+    .manifesto { color: var(--muted); max-width: 60ch; }
+    .grid { display:grid; grid-template-columns: 1.2fr .8fr; gap: 22px; margin-top: 26px; }
+    @media (max-width: 860px){ .grid { grid-template-columns: 1fr; } }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+      background: rgba(255,255,255,0.02);
+    }
+    .product h2 { margin: 0 0 8px; font-size: 20px; }
+    .price { color: var(--muted); margin: 0 0 14px; }
+    .img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color: var(--muted);
+      margin: 10px 0 14px;
+      overflow: hidden;
+    }
+    .img img { width: 100%; height: 100%; object-fit: cover; display:block; }
+
+    .btn {
+      display:inline-block;
+      padding: 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--fg);
+      font-weight: 600;
+      letter-spacing: .02em;
+    }
+    .btn:hover { background: var(--fg); color: var(--bg); }
+    .fine { color: var(--muted); font-size: 14px; margin-top: 12px; }
+    ul { margin: 10px 0 0; padding-left: 18px; color: var(--muted); }
+    footer { margin-top: 28px; padding-top: 18px; border-top: 1px solid var(--line); display:flex; flex-wrap:wrap; gap: 12px; justify-content: space-between; align-items: baseline; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+    .pill { border: 1px solid var(--line); padding: 6px 10px; border-radius: 999px; color: var(--muted); font-size: 13px; }
+    .note { color: var(--muted); }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">Who Killed the World</div>
+      <div class="right">
+        <span class="tag">small batches • made in NM</span>
+        <a class="pill" href="#buy">shop</a>
+        <a class="pill" href="#contact">contact</a>
+      </div>
+    </header>
+
+    <main>
+      <h1>No fluff. Just product.</h1>
+      <p class="manifesto">
+        Who Killed the World is a small-run clothing project. We make what we can make.
+        If it’s available, it ships. If it’s gone, it’s gone.
+      </p>
+
+      <div class="grid">
+        <!-- PRODUCT CARD -->
+        <section id="buy" class="card product">
+          <h2>WKTW Beanie — Black</h2>
+          <p class="price">$35 • embroidered • small batch</p>
+
+          <!-- Replace this placeholder with a real photo later -->
+          <div class="img">
+            <!-- To use a real image, put a file named "product.jpg" next to index.html
+                 and uncomment the img tag below. -->
+            <!-- <img src="product.jpg" alt="WKTW Beanie in Black" /> -->
+            <span class="mono">[ drop a product photo here ]</span>
+          </div>
+
+          <!-- IMPORTANT: Replace the href with your Stripe Payment Link -->
+          <a class="btn" href="https://buy.stripe.com/test_dRm7sL6ri5FT0xu6pmfEk00" target="_blank" rel="noopener noreferrer">
+            Buy now
+          </a>
+
+          <p class="fine">
+            Shipping: 2–5 business days to process. Tracking included.<br/>
+            All sales final unless we messed up.
+          </p>
+        </section>
+
+        <!-- INFO CARD -->
+        <aside class="card">
+          <div class="mono">What’s this?</div>
+          <p class="note">
+            A legit, minimal storefront. One page. One product. One button.
+            It loads fast and doesn’t pretend to be a corporation.
+          </p>
+
+          <div class="mono" style="margin-top:14px;">Next drops</div>
+          <ul>
+            <li>Cap / beanie variants</li>
+            <li>Hoodie (printed back + embroidered chest)</li>
+            <li>Limited restocks only</li>
+          </ul>
+
+          <div id="contact" class="mono" style="margin-top:14px;">Contact</div>
+          <p class="note">
+            Email: <a href="mailto:hello@whokilledtheworld.com">hello@whokilledtheworld.com</a><br/>
+            Instagram: <a href="https://instagram.com/REPLACE_ME" target="_blank" rel="noopener noreferrer">@REPLACE_ME</a>
+          </p>
+
+          <p class="fine">© <span id="y"></span> Who Killed the World Ltd. Co.</p>
+        </aside>
+      </div>
+    </main>
+
+    <footer>
+      <span class="mono">Built to ship, not to impress.</span>
+      <span class="pill">v1</span>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
