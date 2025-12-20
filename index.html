@@ -647,8 +647,8 @@
       <section class="grid" aria-label="Product grid">
         <article class="card item" data-sku="beanie-black">
           <div class="thumb">
-            <img src="/assets/products/beanieproduct.jpg" alt="WKTW Beanie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/beanieproduct.jpg ]</span>';">
+            <img src="beanieproduct.jpg.JPG" alt="WKTW Beanie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: beanieproduct.jpg.JPG (repo root) ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Beanie — Black</p>
@@ -658,8 +658,8 @@
 
         <article class="card item" data-sku="hoodie-black">
           <div class="thumb">
-            <img src="/assets/products/hoodie.jpg" alt="WKTW Hoodie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/hoodie.jpg ]</span>';">
+            <img src="hoodie.jpg" alt="WKTW Hoodie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add hoodie.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Hoodie — Black</p>
@@ -669,8 +669,8 @@
 
         <article class="card item" data-sku="sweats-ash">
           <div class="thumb">
-            <img src="/assets/products/sweats.jpg" alt="WKTW Sweats — Ash"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/sweats.jpg ]</span>';">
+            <img src="sweats.jpg" alt="WKTW Sweats — Ash"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add sweats.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Sweats — Ash</p>
@@ -681,7 +681,7 @@
 
       <section class="card panel" aria-label="Selected product">
         <div class="panel-media">
-          <img id="pImg" src="/assets/products/beanieproduct.jpg" alt="Selected product">
+          <img id="pImg" src="beanieproduct.jpg.JPG" alt="Selected product">
         </div>
         <div class="panel-body">
           <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Selected</div>
@@ -719,8 +719,9 @@
       <section class="carousel">
         <div class="stage">
           <div class="stage-media">
-            <img id="lbImg" src="/assets/lookbook/lb-drop001-17.jpg" alt="Lookbook image"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ missing lookbook images in /assets/lookbook/ ]</span>';">
+            <!-- This initial src MUST be a real file too (JS will replace it after load) -->
+            <img id="lbImg" src="assets/lookbook/lb-drop001-17.JPG" alt="Lookbook image"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ missing lookbook image — check filename + case in /assets/lookbook ]</span>';">
           </div>
           <div class="stage-caption">
             <strong id="lbTitle">Drop 001 — Look 17</strong>
@@ -855,23 +856,25 @@
   <script>
     // ================= EASY EDIT ZONE =================
     const START_YEAR = 2019;
+
+    // Use an ISO string WITH timezone to avoid countdown weirdness.
+    // Example (Denver): "2026-01-20T23:59:59-07:00"
     const DROP_ENDS_AT = "2026-01-20T23:59:59-07:00";
 
-    // These MUST exist in GitHub (case-sensitive on Cloudflare Pages):
-    // /assets/lookbook/lb-drop001-17.jpg ... 21.jpg
+    // ✅ These MUST match your GitHub filenames EXACTLY (case matters)
     const LOOKBOOK = [
-      { src: "/assets/lookbook/lb-drop001-17.jpg", title: "Drop 001 — Look 17" },
-      { src: "/assets/lookbook/lb-drop001-18.jpg", title: "Drop 001 — Look 18" },
-      { src: "/assets/lookbook/lb-drop001-19.jpg", title: "Drop 001 — Look 19" },
-      { src: "/assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 20" },
-      { src: "/assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 21" },
+      { src: "assets/lookbook/lb-drop001-17.JPG", title: "Drop 001 — Look 17" },
+      { src: "assets/lookbook/lb-drop001-18.JPG", title: "Drop 001 — Look 18" },
+      { src: "assets/lookbook/lb-drop001-19.JPG", title: "Drop 001 — Look 19" },
+      { src: "assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 20" },
+      { src: "assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 21" },
     ];
 
     const PRODUCTS = {
       "beanie-black": {
         name: "WKTW Beanie — Black",
         priceLine: "$35 • embroidered • small batch",
-        img: "/assets/products/beanieproduct.jpg",
+        img: "beanieproduct.jpg.JPG",
         stock: "IN STOCK",
         sizes: null,
         buy: "https://buy.stripe.com/test_9B614n2b21pD1By6pmfEk01"
@@ -879,7 +882,7 @@
       "hoodie-black": {
         name: "WKTW Hoodie — Black",
         priceLine: "$85 • print + embroidery",
-        img: "/assets/products/hoodie.jpg",
+        img: "hoodie.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_HOODIE_S",
@@ -892,7 +895,7 @@
       "sweats-ash": {
         name: "WKTW Sweats — Ash",
         priceLine: "$70 • screenprint",
-        img: "/assets/products/sweats.jpg",
+        img: "sweats.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_SWEATS_S",
@@ -1024,6 +1027,7 @@
     const cdLabel = document.getElementById("cdLabel");
     const cdTime = document.getElementById("cdTime");
     const target = new Date(DROP_ENDS_AT);
+
     function pad2(n){ return String(n).padStart(2,"0"); }
 
     function tickCountdown(){
@@ -1035,6 +1039,7 @@
         cdTime.textContent = "set DROP_ENDS_AT";
         return;
       }
+
       if(diff <= 0){
         cdLabel.textContent = "Drop status";
         cdTime.textContent = "CLOSED";
@@ -1085,8 +1090,14 @@
       renderDots();
     }
 
-    function nextLook(){ lbIndex = (lbIndex + 1) % LOOKBOOK.length; renderLook(); }
-    function prevLook(){ lbIndex = (lbIndex - 1 + LOOKBOOK.length) % LOOKBOOK.length; renderLook(); }
+    function nextLook(){
+      lbIndex = (lbIndex + 1) % LOOKBOOK.length;
+      renderLook();
+    }
+    function prevLook(){
+      lbIndex = (lbIndex - 1 + LOOKBOOK.length) % LOOKBOOK.length;
+      renderLook();
+    }
 
     lbNext.addEventListener("click", nextLook);
     lbPrev.addEventListener("click", prevLook);
