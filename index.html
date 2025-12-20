@@ -4,19 +4,20 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Who Killed the World</title>
-  <meta name="description" content="Optimism, worn daily. Small batches. Real craft." />
+  <meta name="description" content="Small-batch apparel. Printed & embroidered in New Mexico." />
 
   <style>
     :root{
-      --bg:#0b0b0b;
-      --fg:#f2f2f2;
-      --muted:#b9b9b9;
-      --line:rgba(242,242,242,0.16);
+      --bg:#0a0a0a;
+      --fg:#f3f2ee;
+      --muted:rgba(243,242,238,.70);
+      --line:rgba(243,242,238,.16);
 
-      --a:#B9FF1A;   /* acid */
-      --b:#7C5CFF;   /* electric */
-      --c:#FF4FD8;   /* punch */
-      --warn:#FFB000;
+      /* New Mexico leaning: turquoise sky, chile red, desert sun */
+      --a:#28D7C2;   /* turquoise */
+      --b:#C61B1B;   /* chile red */
+      --c:#FF6A2A;   /* sunset orange */
+      --warn:#F2C14E;/* desert gold */
 
       --card: rgba(255,255,255,0.04);
       --card2: rgba(255,255,255,0.06);
@@ -29,10 +30,11 @@
     html,body{ height:100%; }
     body{
       margin:0;
-      background: radial-gradient(1200px 900px at 12% -10%, rgba(124,92,255,.18), transparent 60%),
-                  radial-gradient(900px 700px at 110% 5%, rgba(255,79,216,.14), transparent 55%),
-                  radial-gradient(850px 650px at 45% 120%, rgba(185,255,26,.12), transparent 55%),
-                  var(--bg);
+      background:
+        radial-gradient(1000px 800px at 12% -10%, rgba(40,215,194,.16), transparent 60%),
+        radial-gradient(900px 700px at 110% 8%, rgba(198,27,27,.14), transparent 58%),
+        radial-gradient(900px 700px at 55% 120%, rgba(255,106,42,.12), transparent 58%),
+        var(--bg);
       color:var(--fg);
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
       line-height:1.55;
@@ -53,7 +55,7 @@
     .topbar{
       position: sticky; top:0; z-index:20;
       backdrop-filter: blur(12px);
-      background: rgba(11,11,11,.78);
+      background: rgba(10,10,10,.78);
       border-bottom: 1px solid var(--line);
     }
     .topbar-inner{
@@ -66,21 +68,19 @@
       gap:12px;
     }
     .brand{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  font-weight: 950;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-  font-size: 13px;
-  white-space: nowrap;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
-}
-.brand:hover{
-  opacity: .92;
-}
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      font-size: 13px;
+      white-space: nowrap;
+      color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .brand:hover{ opacity: .92; }
 
     .logo{
       width: 26px; height: 26px; border-radius: 10px;
@@ -112,7 +112,7 @@
       transition: transform .08s ease, border-color .08s ease, background .08s ease, color .08s ease;
     }
     .tab:hover{
-      border-color: rgba(242,242,242,.35);
+      border-color: rgba(243,242,238,.35);
       color: var(--fg);
       transform: translateY(-1px);
     }
@@ -147,11 +147,11 @@
       font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(242,242,242,.80);
+      color: rgba(243,242,238,.82);
       padding: 2px 0;
     }
     .marquee span{ display:inline-flex; align-items:center; gap:10px; }
-    .pip{ width:6px; height:6px; border-radius:999px; background: var(--a); box-shadow: 0 0 0 3px rgba(185,255,26,.10); }
+    .pip{ width:6px; height:6px; border-radius:999px; background: var(--a); box-shadow: 0 0 0 3px rgba(40,215,194,.10); }
     @keyframes scroll{ from{ transform: translateX(0); } to{ transform: translateX(-50%); } }
 
     .countdown{
@@ -163,7 +163,7 @@
       font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(242,242,242,.88);
+      color: rgba(243,242,238,.90);
       white-space: nowrap;
     }
     .countdown strong{ letter-spacing: .08em; }
@@ -213,18 +213,19 @@
     .hero-card:before{
       content:"";
       position:absolute; inset:-40% -20%;
-      background: radial-gradient(circle at 30% 30%, rgba(185,255,26,.22), transparent 40%),
-                  radial-gradient(circle at 70% 70%, rgba(255,79,216,.16), transparent 45%),
-                  radial-gradient(circle at 80% 20%, rgba(124,92,255,.16), transparent 45%);
+      background:
+        radial-gradient(circle at 30% 30%, rgba(40,215,194,.18), transparent 42%),
+        radial-gradient(circle at 70% 70%, rgba(255,106,42,.14), transparent 48%),
+        radial-gradient(circle at 80% 20%, rgba(198,27,27,.14), transparent 48%);
       transform: rotate(8deg);
-      opacity:.9;
+      opacity:.95;
     }
     .hero-card > *{ position:relative; }
     .kicker{
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
-      color: rgba(242,242,242,.85);
+      color: rgba(243,242,238,.82);
     }
     .big{
       margin-top: 8px;
@@ -234,7 +235,7 @@
     }
     .rules{
       margin-top: 10px;
-      color: rgba(242,242,242,.78);
+      color: rgba(243,242,238,.78);
       font-size: 13px;
       line-height: 1.6;
     }
@@ -249,7 +250,7 @@
       letter-spacing: .14em;
       text-transform: uppercase;
       font-size: 12px;
-      color: rgba(242,242,242,.75);
+      color: rgba(243,242,238,.78);
     }
     .section-title .right{ color: var(--muted); font-size: 13px; }
 
@@ -270,7 +271,7 @@
       gap:10px;
       padding: 12px 14px;
       border-radius: 14px;
-      border: 1px solid rgba(242,242,242,.85);
+      border: 1px solid rgba(243,242,238,.85);
       font-weight: 950;
       letter-spacing: .02em;
       transition: transform .08s ease, background .08s ease, color .08s ease, border-color .08s ease;
@@ -289,7 +290,7 @@
     .btn.alt:hover{
       background: rgba(255,255,255,.08);
       color: var(--fg);
-      border-color: rgba(242,242,242,.35);
+      border-color: rgba(243,242,238,.35);
     }
     .btn[aria-disabled="true"]{
       opacity:.45;
@@ -307,16 +308,16 @@
       font-size: 12px;
       letter-spacing: .12em;
       text-transform: uppercase;
-      color: rgba(242,242,242,.86);
+      color: rgba(243,242,238,.88);
     }
     .sticker .spark{
       width: 8px; height: 8px;
       border-radius: 99px;
       background: var(--c);
-      box-shadow: 0 0 0 4px rgba(255,79,216,.10);
+      box-shadow: 0 0 0 4px rgba(255,106,42,.10);
     }
-    .sticker.good .spark{ background: var(--a); box-shadow: 0 0 0 4px rgba(185,255,26,.12); }
-    .sticker.warn .spark{ background: var(--warn); box-shadow: 0 0 0 4px rgba(255,176,0,.12); }
+    .sticker.good .spark{ background: var(--a); box-shadow: 0 0 0 4px rgba(40,215,194,.12); }
+    .sticker.warn .spark{ background: var(--warn); box-shadow: 0 0 0 4px rgba(242,193,78,.12); }
 
     /* Shop */
     .grid{
@@ -334,7 +335,7 @@
     }
     .item:hover{
       transform: translateY(-2px);
-      border-color: rgba(242,242,242,.30);
+      border-color: rgba(243,242,238,.30);
       background: var(--card2);
     }
     .thumb{
@@ -366,10 +367,10 @@
       padding: 3px 8px;
       border-radius: 999px;
       font-size: 12px;
-      color: rgba(242,242,242,.78);
+      color: rgba(243,242,238,.82);
       background: rgba(0,0,0,.18);
     }
-    .badge .pip{ background: var(--b); box-shadow: 0 0 0 3px rgba(124,92,255,.10); }
+    .badge .pip{ background: var(--b); box-shadow: 0 0 0 3px rgba(198,27,27,.10); }
 
     /* Panel */
     .panel{
@@ -445,7 +446,7 @@
       justify-content:space-between;
       align-items:baseline;
       gap:10px;
-      color: rgba(242,242,242,.78);
+      color: rgba(243,242,238,.78);
       font-size: 13px;
     }
     .stage-caption strong{
@@ -470,7 +471,7 @@
       cursor:pointer;
       transition: transform .08s ease, border-color .08s ease, background .08s ease;
     }
-    .iconbtn:hover{ transform: translateY(-1px); border-color: rgba(242,242,242,.35); background: rgba(255,255,255,.06); }
+    .iconbtn:hover{ transform: translateY(-1px); border-color: rgba(243,242,238,.35); background: rgba(255,255,255,.06); }
     .dots{ display:flex; gap:8px; align-items:center; flex-wrap:wrap; }
     .dotbtn{
       width: 10px; height: 10px;
@@ -482,7 +483,7 @@
     .dotbtn.active{
       background: var(--a);
       border-color: transparent;
-      box-shadow: 0 0 0 4px rgba(185,255,26,.10);
+      box-shadow: 0 0 0 4px rgba(40,215,194,.10);
     }
 
     /* Journal */
@@ -494,7 +495,7 @@
     @media (max-width: 980px){ .posts{ grid-template-columns: 1fr; } }
     .post{ padding: 16px; }
     .post .date{
-      color: rgba(242,242,242,.78);
+      color: rgba(243,242,238,.78);
       font-size: 12px;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -515,10 +516,10 @@
       font-size: 13px;
     }
     .link{
-      border-bottom: 1px solid rgba(242,242,242,.22);
+      border-bottom: 1px solid rgba(243,242,238,.22);
     }
     .link:hover{
-      border-bottom-color: rgba(242,242,242,.75);
+      border-bottom-color: rgba(243,242,238,.75);
       color: var(--fg);
     }
 
@@ -539,9 +540,9 @@
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#home" data-page="home" aria-label="Who Killed the World — Home">
-  <span class="logo" aria-hidden="true"></span>
-  Who Killed the World
-</a>
+        <span class="logo" aria-hidden="true"></span>
+        Who Killed the World
+      </a>
 
       <nav class="nav" aria-label="Primary">
         <a class="tab" href="#home" data-page="home" aria-current="page">Home</a>
@@ -558,16 +559,16 @@
         <div class="marquee-wrap" aria-hidden="true">
           <div class="marquee">
             <span><span class="pip"></span>DROP 001</span>
-            <span><span class="pip"></span>OPTIMISM IS DISCIPLINE</span>
-            <span><span class="pip"></span>SMALL BATCHES ONLY</span>
-            <span><span class="pip"></span>MADE IN NM</span>
-            <span><span class="pip"></span>TRACKING ON EVERY ORDER</span>
+            <span><span class="pip"></span>ALBUQUERQUE, NM</span>
+            <span><span class="pip"></span>PRINT + EMBROIDERY</span>
+            <span><span class="pip"></span>SMALL BATCH</span>
+            <span><span class="pip"></span>TRACKING INCLUDED</span>
 
             <span><span class="pip"></span>DROP 001</span>
-            <span><span class="pip"></span>OPTIMISM IS DISCIPLINE</span>
-            <span><span class="pip"></span>SMALL BATCHES ONLY</span>
-            <span><span class="pip"></span>MADE IN NM</span>
-            <span><span class="pip"></span>TRACKING ON EVERY ORDER</span>
+            <span><span class="pip"></span>ALBUQUERQUE, NM</span>
+            <span><span class="pip"></span>PRINT + EMBROIDERY</span>
+            <span><span class="pip"></span>SMALL BATCH</span>
+            <span><span class="pip"></span>TRACKING INCLUDED</span>
           </div>
         </div>
 
@@ -586,52 +587,51 @@
     <section class="page active fade-in" id="page-home">
       <section class="hero">
         <div>
-          <h1>Optimism,<br/>worn daily.</h1>
+          <h1>WKTW.<br/>Small batch.</h1>
           <p class="sub">
-            WKTW isn’t doomwear. It’s the opposite: a reminder that meaning is something you build.
-            The world is unfinished — so we keep making things anyway.
+            Printed & embroidered in New Mexico. Limited runs. When it’s gone, it’s gone.
           </p>
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <span class="sticker good"><span class="spark"></span>Drop 001 live</span>
-            <span class="sticker"><span class="spark"></span>Small batch</span>
-            <span class="sticker warn"><span class="spark"></span>No restock promises</span>
+            <span class="sticker good"><span class="spark"></span>Drop 001</span>
+            <span class="sticker"><span class="spark"></span>Printed + embroidered</span>
+            <span class="sticker warn"><span class="spark"></span>No restock promise</span>
           </div>
 
           <div style="margin-top:14px; display:flex; gap:10px; flex-wrap:wrap;">
-            <a class="btn" href="#shop" data-page="shop">Shop now</a>
+            <a class="btn" href="#shop" data-page="shop">Shop</a>
             <a class="btn alt" href="#lookbook" data-page="lookbook">Lookbook</a>
-            <a class="btn alt" href="#journal" data-page="journal">Journal</a>
+            <a class="btn alt" href="#journal" data-page="journal">Updates</a>
           </div>
         </div>
 
         <div class="hero-card">
-          <div class="kicker mono">Drop rules</div>
-          <div class="big">We keep it human.</div>
+          <div class="kicker mono">Details</div>
+          <div class="big">Quality over volume.</div>
           <div class="rules">
             • Processing: 2–5 business days<br/>
-            • Tracking on every order<br/>
+            • Tracking included<br/>
             • All sales final unless we messed up<br/>
-            • Real print + real embroidery
+            • Print + embroidery handled in-house
           </div>
         </div>
       </section>
 
       <div class="section-title">
         <div class="left">Featured</div>
-        <div class="right">Start with the beanie.</div>
+        <div class="right">In stock now.</div>
       </div>
 
       <section class="card pad">
         <div style="display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; align-items:center;">
           <div>
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Featured product</div>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Featured</div>
             <div style="font-weight:950; font-size:18px; margin-top:8px;">WKTW Beanie — Black</div>
             <div style="color:var(--muted); margin-top:6px;">$35 • embroidered • small batch</div>
           </div>
           <div style="display:flex; gap:10px; flex-wrap:wrap;">
             <a class="btn" href="#shop" data-page="shop">Open shop</a>
-            <a class="btn alt" href="#about" data-page="about">Why WKTW?</a>
+            <a class="btn alt" href="#about" data-page="about">About</a>
           </div>
         </div>
       </section>
@@ -641,7 +641,7 @@
     <section class="page fade-in" id="page-shop">
       <div class="section-title">
         <div class="left">Shop</div>
-        <div class="right">Click a product → pick size → buy.</div>
+        <div class="right">Select item → size (if needed) → checkout.</div>
       </div>
 
       <section class="grid" aria-label="Product grid">
@@ -684,7 +684,7 @@
           <img id="pImg" src="beanieproduct.jpg.JPG" alt="Selected product">
         </div>
         <div class="panel-body">
-          <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Selected</div>
+          <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Selected</div>
           <h2 id="pName" style="margin:10px 0 0;">WKTW Beanie — Black</h2>
           <div id="pPrice" class="price">$35 • embroidered • small batch</div>
 
@@ -713,14 +713,14 @@
     <section class="page fade-in" id="page-lookbook">
       <div class="section-title">
         <div class="left">Lookbook</div>
-        <div class="right">Carousel (click dots / arrows).</div>
+        <div class="right">Real photos. No captions needed.</div>
       </div>
 
       <section class="carousel">
         <div class="stage">
           <div class="stage-media">
             <img id="lbImg" src="look1.jpg" alt="Lookbook image"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(242,242,242,.75)&quot;>[ add lookbook images: look1.jpg, look2.jpg, ... ]</span>';">
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ add lookbook images: look1.jpg, look2.jpg, ... ]</span>';">
           </div>
           <div class="stage-caption">
             <strong id="lbTitle">Look 01</strong>
@@ -734,14 +734,13 @@
         </div>
 
         <div class="card pad">
-          <div class="sticker good"><span class="spark"></span>High-life energy</div>
-          <h2 style="margin:12px 0 0;">Make it bright.</h2>
+          <div class="sticker"><span class="spark"></span>Notes</div>
+          <h2 style="margin:12px 0 0;">Shoot it clean.</h2>
           <p style="margin:10px 0 0; color:var(--muted);">
-            Mix 3–10 images. Include embroidery close-ups, screenprint texture, and one human shot.
-            Imperfect photos feel real — that’s the point.
+            Add: product front, product back, embroidery close-up, print close-up, one fit pic.
           </p>
           <p style="margin:10px 0 0; color:var(--muted);">
-            Tip: rename images to match the list in the Easy Edit Zone.
+            The better the details, the less you need to say.
           </p>
         </div>
       </section>
@@ -750,33 +749,33 @@
     <!-- JOURNAL -->
     <section class="page fade-in" id="page-journal">
       <div class="section-title">
-        <div class="left">Journal</div>
-        <div class="right">Drop notes + process + philosophy.</div>
+        <div class="left">Updates</div>
+        <div class="right">Short. Useful.</div>
       </div>
 
       <section class="posts">
         <article class="card post">
           <div class="date"><span class="pip"></span>Drop 001</div>
-          <h3>We’re back — on purpose.</h3>
-          <p>Small run. Tight quality. No corporate voice. Just making better things than last time.</p>
+          <h3>Beanie live.</h3>
+          <p>Embroidered run. Limited quantity.</p>
         </article>
 
         <article class="card post">
-          <div class="date"><span class="pip"></span>Process</div>
-          <h3>Why small batches</h3>
-          <p>Because it keeps it honest. Because “limited” isn’t a trick if it’s real.</p>
+          <div class="date"><span class="pip"></span>Production</div>
+          <h3>Hoodie in progress.</h3>
+          <p>Print + embroidery layout locked. Photos soon.</p>
         </article>
 
         <article class="card post">
-          <div class="date"><span class="pip"></span>Meaning</div>
-          <h3>Optimism is discipline</h3>
-          <p>Not denial. Not hype. A choice you practice. Clothing as a daily reminder.</p>
+          <div class="date"><span class="pip"></span>Shipping</div>
+          <h3>Processing window.</h3>
+          <p>2–5 business days. Tracking always.</p>
         </article>
 
         <article class="card post">
           <div class="date"><span class="pip"></span>Next</div>
-          <h3>Hoodie + sweats</h3>
-          <p>Heavier blanks, better fit, cleaner prints. Same energy, more weight.</p>
+          <h3>Sweats preview.</h3>
+          <p>Fabric + fit being finalized.</p>
         </article>
       </section>
     </section>
@@ -785,25 +784,29 @@
     <section class="page fade-in" id="page-about">
       <div class="section-title">
         <div class="left">About</div>
-        <div class="right">The why (no cringe).</div>
+        <div class="right">No speeches.</div>
       </div>
 
       <section class="card pad">
-        <div class="sticker"><span class="spark"></span>WKTW is a question</div>
-        <h2 style="margin:12px 0 0;">A brand about meaning.</h2>
+        <div class="sticker"><span class="spark"></span>WKTW</div>
+        <h2 style="margin:12px 0 0;">Made in New Mexico.</h2>
         <p style="margin:10px 0 0; color:var(--muted); max-width: 78ch;">
-          “Who Killed the World” isn’t a slogan. It’s a prompt.
-          We’re not selling doom — we’re building a response: craft, community, and choosing meaning anyway.
+          Small-batch apparel. Printed and embroidered in-house.
+          We release pieces when they’re ready.
         </p>
 
         <div style="margin-top:14px; display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
           <div class="card pad" style="box-shadow:none; background: rgba(255,255,255,.03);">
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Values</div>
-            <p style="margin:10px 0 0; color:var(--muted);">Craft &gt; clout. Community &gt; hype. Meaning &gt; noise.</p>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Standards</div>
+            <p style="margin:10px 0 0; color:var(--muted);">
+              Clean print. Dense stitch. No shortcuts.
+            </p>
           </div>
           <div class="card pad" style="box-shadow:none; background: rgba(255,255,255,.03);">
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Made with</div>
-            <p style="margin:10px 0 0; color:var(--muted);">Screen print + embroidery. Small runs. Real hands.</p>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Drops</div>
+            <p style="margin:10px 0 0; color:var(--muted);">
+              Limited runs. Restocks aren’t guaranteed.
+            </p>
           </div>
         </div>
       </section>
@@ -819,25 +822,24 @@
       <section class="card pad">
         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:14px;">
           <div>
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Email</div>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Email</div>
             <p style="margin:8px 0 0;">
               <a class="link" href="mailto:hello@whokilledtheworld.com">hello@whokilledtheworld.com</a>
             </p>
 
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px; margin-top:14px;">Instagram</div>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px; margin-top:14px;">Instagram</div>
             <p style="margin:8px 0 0;">
               <a class="link" href="https://instagram.com/whokilledthewrld" target="_blank" rel="noopener noreferrer">@whokilledthewrld</a>
             </p>
           </div>
 
           <div>
-            <div class="mono" style="color:rgba(242,242,242,.75); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Customer care</div>
+            <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Customer care</div>
             <p style="margin:8px 0 0; color:var(--muted);">
-              If something’s wrong, we’ll fix it. If you have a question, ask it.
-              You’re talking to real people.
+              If we messed up, we fix it. Otherwise, all sales final.
             </p>
             <p style="margin:10px 0 0; color:var(--muted);">
-              Processing: 2–5 business days. Tracking on every order.
+              Processing: 2–5 business days. Tracking included.
             </p>
           </div>
         </div>
@@ -845,7 +847,7 @@
     </section>
 
     <footer>
-      <span class="mono">Optimism, worn daily.</span>
+      <span class="mono">WKTW • Albuquerque, NM</span>
       <span>© <span id="y"></span> Who Killed the World Ltd. Co.</span>
     </footer>
   </main>
@@ -854,18 +856,16 @@
     // ================= EASY EDIT ZONE =================
     const START_YEAR = 2019;
 
-    // Countdown target: set to a real ISO date/time (local time is ok).
-    // Example: "2026-01-15T18:00:00"
-    const DROP_ENDS_AT = "2026-01-20T23:59:59";
+    // Use an ISO string WITH timezone to avoid countdown weirdness.
+    // Example (Denver): "2026-01-20T23:59:59-07:00"
+    const DROP_ENDS_AT = "2026-01-20T23:59:59-07:00";
 
-    // Lookbook images (add/remove as you upload files)
     const LOOKBOOK = [
       { src: "look1.jpg", title: "Look 01" },
       { src: "look2.jpg", title: "Look 02" },
       { src: "look3.jpg", title: "Look 03" },
     ];
 
-    // Products: set stock to "IN STOCK", "SOLD OUT", or "SOON"
     const PRODUCTS = {
       "beanie-black": {
         name: "WKTW Beanie — Black",
@@ -941,7 +941,7 @@
     window.addEventListener("hashchange", ()=> showPage(pageFromHash()));
     showPage(pageFromHash());
 
-    // ===== Stock badges in grid (auto updates from PRODUCTS) =====
+    // Stock badges
     function syncStockBadges(){
       document.querySelectorAll("[data-stock-badge]").forEach(el=>{
         const sku = el.getAttribute("data-stock-badge");
@@ -952,7 +952,7 @@
     }
     syncStockBadges();
 
-    // ===== Shop selection logic =====
+    // Shop selection
     const pImg = document.getElementById("pImg");
     const pName = document.getElementById("pName");
     const pPrice = document.getElementById("pPrice");
@@ -970,7 +970,6 @@
       pImg.src = p.img;
       pImg.alt = p.name;
 
-      // stock behavior
       const stock = (p.stock || "").toUpperCase();
       const buyable = stock === "IN STOCK";
 
@@ -986,7 +985,6 @@
         buyBtn.textContent = "Buy now";
       }
 
-      // size behavior
       if(p.sizes && buyable){
         sizeRow.style.display = "flex";
         sizeSelect.innerHTML = "";
@@ -1021,7 +1019,7 @@
     });
     selectProduct("beanie-black");
 
-    // ===== Countdown =====
+    // Countdown
     const cdLabel = document.getElementById("cdLabel");
     const cdTime = document.getElementById("cdTime");
     const target = new Date(DROP_ENDS_AT);
@@ -1040,7 +1038,7 @@
 
       if(diff <= 0){
         cdLabel.textContent = "Drop status";
-        cdTime.textContent = "LIVE";
+        cdTime.textContent = "CLOSED";
         return;
       }
 
@@ -1056,7 +1054,7 @@
     tickCountdown();
     setInterval(tickCountdown, 1000);
 
-    // ===== Lookbook carousel =====
+    // Lookbook carousel
     const lbImg = document.getElementById("lbImg");
     const lbTitle = document.getElementById("lbTitle");
     const lbMeta = document.getElementById("lbMeta");
@@ -1100,13 +1098,11 @@
     lbNext.addEventListener("click", nextLook);
     lbPrev.addEventListener("click", prevLook);
 
-    // Auto-advance every 6s (only if user is on lookbook page)
     setInterval(()=>{
       const lookbookVisible = document.getElementById("page-lookbook").classList.contains("active");
       if(lookbookVisible && LOOKBOOK.length > 1) nextLook();
     }, 6000);
 
-    // Keyboard support on lookbook page
     window.addEventListener("keydown",(e)=>{
       const lookbookVisible = document.getElementById("page-lookbook").classList.contains("active");
       if(!lookbookVisible) return;
