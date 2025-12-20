@@ -647,8 +647,8 @@
       <section class="grid" aria-label="Product grid">
         <article class="card item" data-sku="beanie-black">
           <div class="thumb">
-            <img src="assets/products/beanieproduct.jpg" alt="WKTW Beanie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: assets/products/beanieproduct.jpg ]</span>';">
+            <img src="/assets/products/beanieproduct.jpg" alt="WKTW Beanie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/beanieproduct.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Beanie — Black</p>
@@ -658,8 +658,8 @@
 
         <article class="card item" data-sku="hoodie-black">
           <div class="thumb">
-            <img src="assets/products/hoodie.jpg" alt="WKTW Hoodie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: assets/products/hoodie.jpg ]</span>';">
+            <img src="/assets/products/hoodie.jpg" alt="WKTW Hoodie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/hoodie.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Hoodie — Black</p>
@@ -669,8 +669,8 @@
 
         <article class="card item" data-sku="sweats-ash">
           <div class="thumb">
-            <img src="assets/products/sweats.jpg" alt="WKTW Sweats — Ash"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: assets/products/sweats.jpg ]</span>';">
+            <img src="/assets/products/sweats.jpg" alt="WKTW Sweats — Ash"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /assets/products/sweats.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Sweats — Ash</p>
@@ -681,7 +681,7 @@
 
       <section class="card panel" aria-label="Selected product">
         <div class="panel-media">
-          <img id="pImg" src="assets/products/beanieproduct.jpg" alt="Selected product">
+          <img id="pImg" src="/assets/products/beanieproduct.jpg" alt="Selected product">
         </div>
         <div class="panel-body">
           <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Selected</div>
@@ -719,9 +719,8 @@
       <section class="carousel">
         <div class="stage">
           <div class="stage-media">
-            <!-- IMPORTANT: This initial src MUST be a real file that exists in GitHub -->
-            <img id="lbImg" src="assets/lookbook/lb-drop001-17.jpg" alt="Lookbook image"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ missing lookbook images in assets/lookbook/ ]</span>';">
+            <img id="lbImg" src="/assets/lookbook/lb-drop001-17.jpg" alt="Lookbook image"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ missing lookbook images in /assets/lookbook/ ]</span>';">
           </div>
           <div class="stage-caption">
             <strong id="lbTitle">Drop 001 — Look 17</strong>
@@ -742,14 +741,6 @@
           </p>
           <p style="margin:10px 0 0; color:var(--muted);">
             The better the details, the less you need to say.
-          </p>
-          <p class="mono" style="margin:12px 0 0; color:rgba(243,242,238,.78); font-size:12px; line-height:1.6;">
-            Make sure these exact files exist in GitHub:<br/>
-            assets/lookbook/lb-drop001-17.jpg<br/>
-            assets/lookbook/lb-drop001-18.jpg<br/>
-            assets/lookbook/lb-drop001-19.jpg<br/>
-            assets/lookbook/lb-drop001-20.jpg<br/>
-            assets/lookbook/lb-drop001-21.jpg
           </p>
         </div>
       </section>
@@ -864,46 +855,23 @@
   <script>
     // ================= EASY EDIT ZONE =================
     const START_YEAR = 2019;
-
-    // Use an ISO string WITH timezone to avoid countdown weirdness.
-    // Example (Denver): "2026-01-20T23:59:59-07:00"
     const DROP_ENDS_AT = "2026-01-20T23:59:59-07:00";
 
-    /*
-      IMPORTANT:
-      For Cloudflare Pages / GitHub: paths are CASE-SENSITIVE.
-      I am assuming you've uploaded these EXACT filenames (lowercase .jpg) into:
-        assets/lookbook/
-          lb-drop001-17.jpg
-          lb-drop001-18.jpg
-          lb-drop001-19.jpg
-          lb-drop001-20.jpg
-          lb-drop001-21.jpg
-    */
+    // These MUST exist in GitHub (case-sensitive on Cloudflare Pages):
+    // /assets/lookbook/lb-drop001-17.jpg ... 21.jpg
     const LOOKBOOK = [
-      { src: "assets/lookbook/lb-drop001-17.jpg", title: "Drop 001 — Look 17" },
-      { src: "assets/lookbook/lb-drop001-18.jpg", title: "Drop 001 — Look 18" },
-      { src: "assets/lookbook/lb-drop001-19.jpg", title: "Drop 001 — Look 19" },
-      { src: "assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 20" },
-      { src: "assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 21" },
+      { src: "/assets/lookbook/lb-drop001-17.jpg", title: "Drop 001 — Look 17" },
+      { src: "/assets/lookbook/lb-drop001-18.jpg", title: "Drop 001 — Look 18" },
+      { src: "/assets/lookbook/lb-drop001-19.jpg", title: "Drop 001 — Look 19" },
+      { src: "/assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 20" },
+      { src: "/assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 21" },
     ];
 
-    /*
-      PRODUCTS:
-      I moved product image paths into assets/products/ to keep things organized.
-      Create this folder in GitHub and upload the images there:
-
-        assets/products/beanieproduct.jpg
-        assets/products/hoodie.jpg
-        assets/products/sweats.jpg
-
-      If you prefer the images at the repo root, change the img/src values back.
-    */
     const PRODUCTS = {
       "beanie-black": {
         name: "WKTW Beanie — Black",
         priceLine: "$35 • embroidered • small batch",
-        img: "assets/products/beanieproduct.jpg",
+        img: "/assets/products/beanieproduct.jpg",
         stock: "IN STOCK",
         sizes: null,
         buy: "https://buy.stripe.com/test_9B614n2b21pD1By6pmfEk01"
@@ -911,7 +879,7 @@
       "hoodie-black": {
         name: "WKTW Hoodie — Black",
         priceLine: "$85 • print + embroidery",
-        img: "assets/products/hoodie.jpg",
+        img: "/assets/products/hoodie.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_HOODIE_S",
@@ -924,7 +892,7 @@
       "sweats-ash": {
         name: "WKTW Sweats — Ash",
         priceLine: "$70 • screenprint",
-        img: "assets/products/sweats.jpg",
+        img: "/assets/products/sweats.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_SWEATS_S",
@@ -1056,7 +1024,6 @@
     const cdLabel = document.getElementById("cdLabel");
     const cdTime = document.getElementById("cdTime");
     const target = new Date(DROP_ENDS_AT);
-
     function pad2(n){ return String(n).padStart(2,"0"); }
 
     function tickCountdown(){
@@ -1068,7 +1035,6 @@
         cdTime.textContent = "set DROP_ENDS_AT";
         return;
       }
-
       if(diff <= 0){
         cdLabel.textContent = "Drop status";
         cdTime.textContent = "CLOSED";
@@ -1119,14 +1085,8 @@
       renderDots();
     }
 
-    function nextLook(){
-      lbIndex = (lbIndex + 1) % LOOKBOOK.length;
-      renderLook();
-    }
-    function prevLook(){
-      lbIndex = (lbIndex - 1 + LOOKBOOK.length) % LOOKBOOK.length;
-      renderLook();
-    }
+    function nextLook(){ lbIndex = (lbIndex + 1) % LOOKBOOK.length; renderLook(); }
+    function prevLook(){ lbIndex = (lbIndex - 1 + LOOKBOOK.length) % LOOKBOOK.length; renderLook(); }
 
     lbNext.addEventListener("click", nextLook);
     lbPrev.addEventListener("click", prevLook);
