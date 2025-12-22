@@ -532,6 +532,160 @@
       .item, .tab, .btn, .iconbtn{ transition: none; }
     }
   </style>
+    /* ================= PASSCODE GATE ================= */
+    .gate{
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      background: rgba(10,10,10,.86);
+      backdrop-filter: blur(10px);
+    }
+    .gate.is-hidden{
+      display: none;
+    }
+    .gate-bg{
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      filter: blur(0px);
+      opacity: .32;
+      transform: scale(1.02);
+    }
+    .gate::after{
+      content:"";
+      position:absolute; inset:0;
+      background:
+        radial-gradient(900px 700px at 15% 0%, rgba(40,215,194,.20), transparent 60%),
+        radial-gradient(900px 700px at 110% 10%, rgba(198,27,27,.20), transparent 58%),
+        radial-gradient(900px 700px at 50% 120%, rgba(255,106,42,.18), transparent 58%),
+        linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.70));
+      pointer-events:none;
+    }
+    .gate-card{
+      position: relative;
+      width: min(720px, 100%);
+      border: 1px solid var(--line);
+      border-radius: calc(var(--radius) + 6px);
+      background: rgba(0,0,0,.42);
+      box-shadow: 0 18px 70px rgba(0,0,0,.55);
+      overflow: hidden;
+      padding: 18px;
+    }
+    .gate-card > *{ position: relative; z-index: 1; }
+
+    .gate-top{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+    .gate-badge{
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      font-size: 12px;
+      color: rgba(243,242,238,.82);
+    }
+    .gate-pill{
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 10px;
+      font-size: 12px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: rgba(243,242,238,.90);
+      background: rgba(0,0,0,.35);
+      white-space: nowrap;
+    }
+
+    .gate-title{
+      margin: 14px 0 6px;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+    }
+    .gate-quote{
+      margin: 0 0 14px;
+      color: rgba(243,242,238,.78);
+      max-width: 62ch;
+    }
+
+    .gate-form{
+      border-top: 1px solid var(--line);
+      padding-top: 14px;
+      margin-top: 8px;
+    }
+    .gate-label{
+      display:block;
+      font-size: 12px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(243,242,238,.78);
+      margin-bottom: 8px;
+    }
+    .gate-row{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .gate-input{
+      flex: 1 1 240px;
+      background: rgba(0,0,0,.45);
+      color: var(--fg);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 12px 12px;
+      outline: none;
+      font-size: 16px;
+    }
+    .gate-input:focus{
+      border-color: rgba(243,242,238,.38);
+    }
+    .gate-btn{
+      flex: 0 0 auto;
+      border-radius: 14px;
+      border: 1px solid rgba(243,242,238,.85);
+      padding: 12px 14px;
+      font-weight: 950;
+      background: transparent;
+      color: var(--fg);
+      cursor: pointer;
+      transition: transform .08s ease, background .08s ease, color .08s ease, border-color .08s ease;
+    }
+    .gate-btn:hover{
+      transform: translateY(-1px);
+      background: var(--fg);
+      color: var(--bg);
+      border-color: transparent;
+    }
+    .gate-hint{
+      margin: 10px 0 0;
+      color: rgba(243,242,238,.70);
+      font-size: 12px;
+      letter-spacing: .10em;
+    }
+    .gate-error{
+      margin: 8px 0 0;
+      color: rgba(198,27,27,.95);
+      font-size: 12px;
+      letter-spacing: .10em;
+      min-height: 1.2em;
+    }
+    .gate-links{
+      margin-top: 14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      color: rgba(243,242,238,.72);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+    .gate-links a:hover{ color: var(--fg); }
 </head>
 
 <body>
@@ -884,6 +1038,18 @@
 
   <script>
     // ================= EASY EDIT ZONE =================
+        // ===== PASSCODE GATE (SOFT LOCK) =====
+    const GATE_ENABLED = true; // set false to disable gate
+    const GATE_PASSCODE = "DROP001"; // change this
+    const GATE_UNLOCK_KEY = "wktw_gate_unlocked_v1";
+
+    // Gate image + quote
+    const GATE_IMAGE = "/assets/branding/gate.jpg"; // <-- upload this file
+    const GATE_QUOTE = "“The world ends quietly.”";
+
+    // Countdown for gate (next drop starts)
+    const DROP_STARTS_AT = "2026-01-10T18:00:00-07:00"; // change this
+
     const START_YEAR = 2019;
 
     // Use an ISO string WITH timezone to avoid countdown weirdness.
