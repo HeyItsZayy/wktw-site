@@ -535,8 +535,37 @@
 </head>
 
 <body>
-  <div class="noise" aria-hidden="true"></div>
+    <!-- PASSCODE GATE -->
+  <div id="gate" class="gate" aria-hidden="false">
+    <div class="gate-bg" id="gateBg" aria-hidden="true"></div>
 
+    <div class="gate-card">
+      <div class="gate-top">
+        <span class="gate-badge mono">WKTW • DROP ACCESS</span>
+        <span class="gate-pill mono" id="gateCountdown">--d --h --m --s</span>
+      </div>
+
+      <h1 class="gate-title">Who Killed the World</h1>
+      <p class="gate-quote" id="gateQuote">“Put your quote here.”</p>
+
+      <form class="gate-form" id="gateForm" autocomplete="off">
+        <label class="gate-label mono" for="gateCode">Enter passcode</label>
+        <div class="gate-row">
+          <input id="gateCode" class="gate-input" type="password" inputmode="text" placeholder="••••••••" />
+          <button class="gate-btn" type="submit">Enter</button>
+        </div>
+        <p class="gate-hint mono" id="gateHint">Drop opens when the timer hits zero.</p>
+        <p class="gate-error mono" id="gateError" role="alert" aria-live="polite"></p>
+      </form>
+
+      <div class="gate-links mono">
+        <a href="https://instagram.com/whokilledthewrld" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <span>•</span>
+        <a href="mailto:hello@whokilledtheworld.com">Email</a>
+      </div>
+    </div>
+  </div>
+<div class="noise" aria-hidden="true"></div>
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#home" data-page="home" aria-label="Who Killed the World — Home">
