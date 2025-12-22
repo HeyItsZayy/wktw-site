@@ -531,7 +531,7 @@
       .fade-in{ animation: none; }
       .item, .tab, .btn, .iconbtn{ transition: none; }
     }
-  </style>
+
     /* ================= PASSCODE GATE ================= */
     .gate{
       position: fixed;
@@ -543,15 +543,12 @@
       background: rgba(10,10,10,.86);
       backdrop-filter: blur(10px);
     }
-    .gate.is-hidden{
-      display: none;
-    }
+    .gate.is-hidden{ display:none; }
     .gate-bg{
       position: absolute;
       inset: 0;
       background-size: cover;
       background-position: center;
-      filter: blur(0px);
       opacity: .32;
       transform: scale(1.02);
     }
@@ -576,13 +573,9 @@
       padding: 18px;
     }
     .gate-card > *{ position: relative; z-index: 1; }
-
     .gate-top{
-      display:flex;
-      align-items:center;
-      justify-content: space-between;
-      gap:12px;
-      flex-wrap:wrap;
+      display:flex; align-items:center; justify-content: space-between;
+      gap:12px; flex-wrap:wrap;
     }
     .gate-badge{
       letter-spacing: .14em;
@@ -601,7 +594,6 @@
       background: rgba(0,0,0,.35);
       white-space: nowrap;
     }
-
     .gate-title{
       margin: 14px 0 6px;
       font-size: clamp(32px, 4vw, 52px);
@@ -613,7 +605,6 @@
       color: rgba(243,242,238,.78);
       max-width: 62ch;
     }
-
     .gate-form{
       border-top: 1px solid var(--line);
       padding-top: 14px;
@@ -627,11 +618,7 @@
       color: rgba(243,242,238,.78);
       margin-bottom: 8px;
     }
-    .gate-row{
-      display:flex;
-      gap:10px;
-      flex-wrap:wrap;
-    }
+    .gate-row{ display:flex; gap:10px; flex-wrap:wrap; }
     .gate-input{
       flex: 1 1 240px;
       background: rgba(0,0,0,.45);
@@ -642,9 +629,7 @@
       outline: none;
       font-size: 16px;
     }
-    .gate-input:focus{
-      border-color: rgba(243,242,238,.38);
-    }
+    .gate-input:focus{ border-color: rgba(243,242,238,.38); }
     .gate-btn{
       flex: 0 0 auto;
       border-radius: 14px;
@@ -686,10 +671,11 @@
       text-transform: uppercase;
     }
     .gate-links a:hover{ color: var(--fg); }
+  </style>
 </head>
 
 <body>
-    <!-- PASSCODE GATE -->
+  <!-- PASSCODE GATE -->
   <div id="gate" class="gate" aria-hidden="false">
     <div class="gate-bg" id="gateBg" aria-hidden="true"></div>
 
@@ -719,7 +705,9 @@
       </div>
     </div>
   </div>
-<div class="noise" aria-hidden="true"></div>
+
+  <div class="noise" aria-hidden="true"></div>
+
   <header class="topbar">
     <div class="topbar-inner">
       <a class="brand" href="#home" data-page="home" aria-label="Who Killed the World — Home">
@@ -765,7 +753,6 @@
   </header>
 
   <main class="wrap">
-
     <!-- HOME -->
     <section class="page active fade-in" id="page-home">
       <section class="hero">
@@ -830,8 +817,8 @@
       <section class="grid" aria-label="Product grid">
         <article class="card item" data-sku="beanie-black">
           <div class="thumb">
-            <img src="beanieproduct.jpg.JPG" alt="WKTW Beanie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: beanieproduct.jpg.JPG (repo root) ]</span>';">
+            <img src="/beanieproduct.jpg.JPG" alt="WKTW Beanie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ missing: /beanieproduct.jpg.JPG ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Beanie — Black</p>
@@ -841,8 +828,8 @@
 
         <article class="card item" data-sku="hoodie-black">
           <div class="thumb">
-            <img src="hoodie.jpg" alt="WKTW Hoodie — Black"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add hoodie.jpg ]</span>';">
+            <img src="/hoodie.jpg" alt="WKTW Hoodie — Black"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add /hoodie.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Hoodie — Black</p>
@@ -852,8 +839,8 @@
 
         <article class="card item" data-sku="sweats-ash">
           <div class="thumb">
-            <img src="sweats.jpg" alt="WKTW Sweats — Ash"
-              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add sweats.jpg ]</span>';">
+            <img src="/sweats.jpg" alt="WKTW Sweats — Ash"
+              onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot;>[ add /sweats.jpg ]</span>';">
           </div>
           <div class="meta">
             <p class="name">WKTW Sweats — Ash</p>
@@ -864,7 +851,7 @@
 
       <section class="card panel" aria-label="Selected product">
         <div class="panel-media">
-          <img id="pImg" src="beanieproduct.jpg.JPG" alt="Selected product">
+          <img id="pImg" src="/beanieproduct.jpg.JPG" alt="Selected product">
         </div>
         <div class="panel-body">
           <div class="mono" style="color:rgba(243,242,238,.78); letter-spacing:.12em; text-transform:uppercase; font-size:12px;">Selected</div>
@@ -902,12 +889,11 @@
       <section class="carousel">
         <div class="stage">
           <div class="stage-media">
-            <!-- This initial src MUST be a real file too (JS will replace it after load) -->
-            <img id="lbImg" src="assets/lookbook/lb-drop001-17.JPG" alt="Lookbook image"
+            <img id="lbImg" src="/assets/lookbook/lb-drop001-17.JPG" alt="Lookbook image"
               onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;mono&quot; style=&quot;color:rgba(243,242,238,.78)&quot;>[ missing lookbook image — check filename + case in /assets/lookbook ]</span>';">
           </div>
           <div class="stage-caption">
-            <strong id="lbTitle">Drop 001 — Look 17</strong>
+            <strong id="lbTitle">Drop 001 — Look 1</strong>
             <span id="lbMeta" class="mono">1 / 5</span>
           </div>
           <div class="controls">
@@ -1038,38 +1024,33 @@
 
   <script>
     // ================= EASY EDIT ZONE =================
-        // ===== PASSCODE GATE (SOFT LOCK) =====
-    const GATE_ENABLED = true; // set false to disable gate
-    const GATE_PASSCODE = "DROP001"; // change this
-    const GATE_UNLOCK_KEY = "wktw_gate_unlocked_v1";
-
-    // Gate image + quote
-    const GATE_IMAGE = "/assets/branding/gate.jpg"; // <-- upload this file
-    const GATE_QUOTE = "“The world ends quietly.”";
-
-    // Countdown for gate (next drop starts)
-    const DROP_STARTS_AT = "2026-01-10T18:00:00-07:00"; // change this
-
     const START_YEAR = 2019;
 
-    // Use an ISO string WITH timezone to avoid countdown weirdness.
-    // Example (Denver): "2026-01-20T23:59:59-07:00"
+    // Drop countdown (top bar)
     const DROP_ENDS_AT = "2026-01-20T23:59:59-07:00";
 
-    // ✅ These MUST match your GitHub filenames EXACTLY (case matters)
+    // Gate (soft lock)
+    const GATE_ENABLED = true;
+    const GATE_PASSCODE = "DROP001";
+    const GATE_UNLOCK_KEY = "wktw_gate_unlocked_v1";
+    const GATE_IMAGE = "/assets/branding/gate.jpg";   // must exist
+    const GATE_QUOTE = "“The world ends quietly.”";
+    const DROP_STARTS_AT = "2026-01-10T18:00:00-07:00";
+
+    // Lookbook (must match repo filenames EXACTLY)
     const LOOKBOOK = [
-      { src: "assets/lookbook/lb-drop001-17.JPG", title: "Drop 001 — Look 1" },
-      { src: "assets/lookbook/lb-drop001-18.JPG", title: "Drop 001 — Look 2" },
-      { src: "assets/lookbook/lb-drop001-19.JPG", title: "Drop 001 — Look 3" },
-      { src: "assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 4" },
-      { src: "assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 5" },
+      { src: "/assets/lookbook/lb-drop001-17.JPG", title: "Drop 001 — Look 1" },
+      { src: "/assets/lookbook/lb-drop001-18.JPG", title: "Drop 001 — Look 2" },
+      { src: "/assets/lookbook/lb-drop001-19.JPG", title: "Drop 001 — Look 3" },
+      { src: "/assets/lookbook/lb-drop001-20.jpg", title: "Drop 001 — Look 4" },
+      { src: "/assets/lookbook/lb-drop001-21.jpg", title: "Drop 001 — Look 5" },
     ];
 
     const PRODUCTS = {
       "beanie-black": {
         name: "WKTW Beanie — Black",
         priceLine: "$35 • embroidered • small batch",
-        img: "beanieproduct.jpg.JPG",
+        img: "/beanieproduct.jpg.JPG",
         stock: "IN STOCK",
         sizes: null,
         buy: "https://buy.stripe.com/test_9B614n2b21pD1By6pmfEk01"
@@ -1077,7 +1058,7 @@
       "hoodie-black": {
         name: "WKTW Hoodie — Black",
         priceLine: "$85 • print + embroidery",
-        img: "hoodie.jpg",
+        img: "/hoodie.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_HOODIE_S",
@@ -1090,7 +1071,7 @@
       "sweats-ash": {
         name: "WKTW Sweats — Ash",
         priceLine: "$70 • screenprint",
-        img: "sweats.jpg",
+        img: "/sweats.jpg",
         stock: "SOON",
         sizes: {
           "S": "https://buy.stripe.com/test_REPLACE_SWEATS_S",
@@ -1107,6 +1088,84 @@
     const CURRENT_YEAR = new Date().getFullYear();
     document.getElementById("y").textContent =
       (CURRENT_YEAR === START_YEAR) ? `${CURRENT_YEAR}` : `${START_YEAR}–${CURRENT_YEAR}`;
+
+    // ================= PASSCODE GATE LOGIC =================
+    const gateEl = document.getElementById("gate");
+    const gateBg = document.getElementById("gateBg");
+    const gateForm = document.getElementById("gateForm");
+    const gateCode = document.getElementById("gateCode");
+    const gateError = document.getElementById("gateError");
+    const gateCountdown = document.getElementById("gateCountdown");
+    const gateQuote = document.getElementById("gateQuote");
+
+    function hideGate(){
+      if(!gateEl) return;
+      gateEl.classList.add("is-hidden");
+      gateEl.setAttribute("aria-hidden","true");
+    }
+    function showGate(){
+      if(!gateEl) return;
+      gateEl.classList.remove("is-hidden");
+      gateEl.setAttribute("aria-hidden","false");
+      setTimeout(()=> gateCode && gateCode.focus(), 50);
+    }
+    function isUnlocked(){
+      try { return localStorage.getItem(GATE_UNLOCK_KEY) === "1"; }
+      catch { return false; }
+    }
+    function setUnlocked(){
+      try { localStorage.setItem(GATE_UNLOCK_KEY, "1"); } catch {}
+    }
+
+    // visuals
+    if(gateBg && GATE_IMAGE) gateBg.style.backgroundImage = `url("${GATE_IMAGE}")`;
+    if(gateQuote && GATE_QUOTE) gateQuote.textContent = GATE_QUOTE;
+
+    // countdown (gate)
+    const dropTarget = new Date(DROP_STARTS_AT);
+    const pad2 = (n)=> String(n).padStart(2,"0");
+    function fmtCountdown(ms){
+      const s = Math.max(0, Math.floor(ms/1000));
+      const days = Math.floor(s / 86400);
+      const hrs  = Math.floor((s % 86400) / 3600);
+      const mins = Math.floor((s % 3600) / 60);
+      const secs = s % 60;
+      return `${days}d ${pad2(hrs)}h ${pad2(mins)}m ${pad2(secs)}s`;
+    }
+    function tickGateCountdown(){
+      if(!gateCountdown) return;
+      if(isNaN(dropTarget.getTime())){
+        gateCountdown.textContent = "set DROP_STARTS_AT";
+        return;
+      }
+      const diff = dropTarget - new Date();
+      gateCountdown.textContent = diff <= 0 ? "DROP LIVE" : fmtCountdown(diff);
+    }
+    tickGateCountdown();
+    setInterval(tickGateCountdown, 1000);
+
+    if(GATE_ENABLED){
+      if(isUnlocked()) hideGate();
+      else showGate();
+    } else {
+      hideGate();
+    }
+
+    if(gateForm){
+      gateForm.addEventListener("submit",(e)=>{
+        e.preventDefault();
+        const val = (gateCode?.value || "").trim();
+        if(val === GATE_PASSCODE){
+          setUnlocked();
+          hideGate();
+          if(gateError) gateError.textContent = "";
+        } else {
+          if(gateError) gateError.textContent = "WRONG CODE";
+          if(gateCode) gateCode.value = "";
+          if(gateCode) gateCode.focus();
+        }
+      });
+    }
 
     // Tabs/pages
     const tabs = Array.from(document.querySelectorAll(".tab"));
@@ -1218,12 +1277,10 @@
     });
     selectProduct("beanie-black");
 
-    // Countdown
+    // Countdown (top bar)
     const cdLabel = document.getElementById("cdLabel");
     const cdTime = document.getElementById("cdTime");
     const target = new Date(DROP_ENDS_AT);
-
-    function pad2(n){ return String(n).padStart(2,"0"); }
 
     function tickCountdown(){
       const now = new Date();
